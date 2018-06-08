@@ -1,5 +1,5 @@
 angular.module('headphonesStore').
-    factory('ViewFactory', function StoreFactory($http, $q){
+    factory('ViewFactory', function StoreFactory($http){
         var service = {
             newView: newView,
             recommedation: recommedation
