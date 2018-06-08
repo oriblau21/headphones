@@ -3,6 +3,7 @@
 const headphonesController = require('../controllers/headphones.controller.server');
 const headphonesTypesController = require('../controllers/headphones.types.controller.server');
 const storesController = require('../controllers/stores.controller.server');
+const viewsController = require('../controllers/view.controller.server');
 const path = require('path');
 const multer = require('multer');
 
@@ -56,6 +57,10 @@ module.exports = (app) => {
     app.route('/api/stores').get(storesController.getAllStores);
 
     app.route('/api/cart').get(headphonesController.cartCheckout);
+
+    app.route('api/view')
+        .get(viewsController.recommend)
+        .post(viewsController.newView);
 
 }
 

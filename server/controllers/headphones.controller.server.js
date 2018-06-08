@@ -13,7 +13,7 @@ module.exports.getAllHeadphones = (req, res) => {
         {
             $group: {
                 _id: '$headphonesType',
-                teas: {
+                headphones: {
                    $push: {
                        _id: '$_id',
                        name: "$name",
