@@ -48,7 +48,7 @@ module.exports = (app) => {
         .get(headphonesController.getHeadphonesById)
         .delete(headphonesController.deleteHeadphones);
 
-    app.route('/api/upload').post(upload.single('file'), headphonesController.uploadHeadphoneImage);
+    app.route('/api/upload').post(upload.single('file'), headphonesController.uploadHeadphonesImage);
 
     app.route('/api/headphonestypes')
         .get(headphonesTypesController.getAllHeadphonesTypes)

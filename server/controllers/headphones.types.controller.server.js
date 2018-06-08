@@ -1,11 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const HeadphoneType = mongoose.model('HeadphoneType');
+const HeadphoneType = mongoose.model('HeadphonesType');
 const socket = require('../socket.io.js');
 
-module.exports.getAllHeadphoneTypes = (req, res) => {
-    Type.find().then(results => {
+module.exports.getAllHeadphonesTypes = (req, res) => {
+    HeadphoneType.find().then(results => {
         res.json(results);
     }).catch(err => {
         console.log(err);
@@ -13,7 +13,7 @@ module.exports.getAllHeadphoneTypes = (req, res) => {
     });
 };
 
-module.exports.addHeadphoneType = (req, res) => {
+module.exports.addHeadphonesType = (req, res) => {
     let headphoneType = new HeadphoneType(req.body);
     
     headphoneType.save().then(result => {

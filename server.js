@@ -14,9 +14,10 @@ try {
 		app.use(express.static('client'));
 
 		// Require all mongoose models
-		require(path.resolve('server/models/headphones.model.server'))
-		require(path.resolve('server/models/headphones.type.model.server'))
-		require(path.resolve('server/models/store.model.server'))
+		require(path.resolve('server/models/headphones.model.server'));
+		require(path.resolve('server/models/headphones.type.model.server'));
+		require(path.resolve('server/models/store.model.server'));
+		require(path.resolve('server/models/view.model.server'));
 
 		// Require the routes of the project
 		require(path.resolve('server/routes/route.server'))(app);

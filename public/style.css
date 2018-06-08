@@ -171,22 +171,6 @@ a, a:hover, a:focus{
 .about-section.right{
 	margin-left: 40px;
 }
-.headphonesFlowerImg{
-	background: url(Images/-Flowers-Wallpaper.jpg);
-    background-repeat: round;
-    display: inline-block;
-	height: 270px;
-	margin-top: 20px;
-	width: 400px;
-}
-.headphonesCupImg{
-	background: url(Images/_Cup.jpg);
-    background-repeat: round;
-    display: inline-block;
-    height: 250px;
-	width: 400px;
-	margin-bottom: 20px;
-}
 
 .cartCounter{
 	position: absolute;
@@ -330,7 +314,8 @@ a, a:hover, a:focus{
 .gMap {
 	width:500px;
 	height:380px;
-	margin:auto
+	margin:auto;
+	border-radius: 10px;
 }
 
 .storesCompTitle {

@@ -40,17 +40,17 @@ module.exports.fillData = (req, res) => {
     Headphones.find().then((results)=> {
         if (results.length == 0) {
             let arr = [
-                {headphoneType: 'Bose', noiseCancelingLevel: 5, name: '', price: 1000, description: '', image: ''},
-                {headphoneType: 'Bose', noiseCancelingLevel: 4, name: '', price: 800, description: '', image: ''},
-                {headphoneType: 'JBL', noiseCancelingLevel: 4, name: '', price: 850, description: '', image: ''},
-                {headphoneType: 'JBL', noiseCancelingLevel: 1, name: '', price: 100, description: '', image: ''},
-                {headphoneType: 'AKG', noiseCancelingLevel: 3, name: '', price: 500, description: '', image: ''},
-                {headphoneType: 'AKG', noiseCancelingLevel: 4, name: '', price: 600, description: '', image: ''},
-                {headphoneType: 'Beats by Dre', noiseCancelingLevel: 5, name: '', price: 900, description: '', image: ''},
-                {headphoneType: 'Beats by Dre', noiseCancelingLevel: 3, name: '', price: 700, description: '', image: ''},
-                {headphoneType: 'Sony', noiseCancelingLevel: 0, name: '', price: 150, description: '', image: ''},
-                {headphoneType: 'Bose', noiseCancelingLevel: 1, name: '', price: 220, description: '', image: ''},
-                {headphoneType: 'Sony', noiseCancelingLevel: 2, name: '', price: 400, description: '', image: ''}
+                {headphonesType: 'Bose', noiseCancelingLevel: 3, name: 'Quiet Comfort 35', price: 1000, description: 'Premium product by world class brand - BOSE', image: 'QC35.jpg'},
+                {headphonesType: 'Bose', noiseCancelingLevel: 2, name: 'Quiet Comfort 25', price: 800, description: 'Premium product by world class brand - BOSE', image: 'QC25.jpg'},
+                {headphonesType: 'JBL', noiseCancelingLevel: 3, name: 'Elite v700', price: 850, description: '', image: 'ELITEV700.jpg'},
+                {headphonesType: 'AKG', noiseCancelingLevel: 1, name: 'T100SI', price: 100, description: '', image: 'T100SI.jpg'},
+                {headphonesType: 'AKG', noiseCancelingLevel: 1, name: 'K845BT', price: 500, description: '', image: 'K845BT.jpg'},
+                {headphonesType: 'AKG', noiseCancelingLevel: 2, name: 'K553 PRO', price: 600, description: '', image: 'K553PRO.png'},
+                {headphonesType: 'Beats by Dre', noiseCancelingLevel: 3, name: 'Studio', price: 900, description: 'For true rappers', image: 'STUDIO.jpg'},
+                {headphonesType: 'Beats by Dre', noiseCancelingLevel: 1, name: 'Solo HD', price: 700, description: '', image: 'SOLOHS.png'},
+                {headphonesType: 'Sony', noiseCancelingLevel: 0, name: '1000XM2', price: 150, description: '', image: '1000XM2.jpg'},
+                {headphonesType: 'Bose', noiseCancelingLevel: 0, name: 'soundtrue', price: 220, description: '', image: 'soundtrue.jpg'},
+                {headphonesType: 'Sony', noiseCancelingLevel: 1, name: 'XB550AP', price: 400, description: '', image: 'XB550AP.jpg'}
             ];
 
             Headphones.collection.insertMany(arr).then((d)=> {
