@@ -60,7 +60,7 @@ module.exports = (app) => {
 
     app.route('api/view')
         .get(viewsController.recommend)
-        .post(viewsController.newView);
+        .put(viewsController.newView);
 
 }
 
