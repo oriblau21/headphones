@@ -1,0 +1,52 @@
+<div class="headphones-filters">
+    Search by name:
+    <input class="form-control" type="text" ng-model="ctrl.searchText"/>
+    <select class="form-control" ng-model="ctrl.orderbyfilter">
+        <option selected value="">select filter</option>
+        <option value="+price">price - low to high </option>
+        <option value="-price">price - high to low</option>
+    </select>
+</div>
+<section layout="row">
+    <aside flex="15" class="checkbox-filters">
+        <div class="aside-filter-header">
+            <h3 class="">Filter By Type:</h3>
+        </div>        
+        <div class="checkbox" ng-repeat="headphonesType in ctrl.headphonesTypeList">
+            <label>
+                <input type="checkbox" ng-model="ctrl.typeFilter[headphonesType.name]" />
+                {{headphonesType.name}}
+            </label>
+        </div>        
+        <div class="aside-filter-header">
+            <h3 class="">Filter By Noise Canceling Level:</h3>
+        </div>
+        <div class="checkbox" ng-repeat="cancelLvl in ctrl.noiseCancelingLevels">
+            <label>
+                <input type="checkbox" ng-model="ctrl.noiseCancelFilter[cancelLvl.key]" />
+                {{cancelLvl.value}}
+            </label>
+        </div>
+    </aside>
+    <div flex class="">        
+        <div class="items" layout="row" layout-wrap>
+            <div class="headphones-item-wrapper" ng-class="{removed: ctrl.removed === headphones._id}" flex="33" ng-repeat="headphones in (ctrl.filteredHeadphones = (ctrl.headphones | filter:{name:ctrl.searchText} | filter:ctrl.filterByType | filter:ctrl.filterByNoiseCancelingLevel | orderBy:ctrl.orderbyfilter))">                
+                <headphones-item headphones="headphones" add-to-cart="false" show-price="ctrl.showPrice">
+                </headphones-item>
+                <div layout="row" layout-align="center center">
+                    <md-button class="remove-headphones-btn manage-headphones-actions-btn md-fab md-mini md-ink-ripple" aria-label="remove headphones" ng-click="ctrl.delete(headphones._id)">
+                        <md-icon md-svg-src="public/Images/delete.svg"></md-icon>
+                    </md-button>
+                    <md-button class="manage-headphones-actions-btn edit-headphones-btn md-fab md-mini md-ink-ripple" aria-label="edit headphones" ng-click="ctrl.openDialog($event, headphones)">
+                        <md-icon md-svg-src="public/Images/edit.svg"></md-icon>
+                    </md-button>
+                </div>                
+            </div>  
+            <h4 class="searchResultErr" ng-if="!ctrl.filteredHeadphones.length">There are no matched items</h4>
+        </div>
+    </div>
+</section>
+
+<md-button class="md-fab add-headphones-btn" aria-label="Add " ng-click="ctrl.openDialog($event)">
+    +
+</md-button>

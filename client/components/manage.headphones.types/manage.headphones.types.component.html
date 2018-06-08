@@ -1,0 +1,16 @@
+<div class="headphones-filters">
+        Search by name:
+        <input class="form-control" type="text" ng-model="ctrl.searchText"/>
+</div>
+<section class="headphones-types-list">
+    <md-list>
+        <md-subheader> Types</md-subheader>
+        <md-list-item ng-repeat="headphonesType in ctrl.headphonesTypes | filter:ctrl.searchText">
+            <h2>{{headphonesType.name}}</h2>
+        </md-list-item>
+    </md-list>
+</section>
+    
+<md-button class="md-fab add-headphones-btn" aria-label="Add " ng-click="ctrl.openDialog($event)">
+    +
+</md-button>
