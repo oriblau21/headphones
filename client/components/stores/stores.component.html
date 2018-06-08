@@ -1,0 +1,22 @@
+<h2 class="storesCompTitle">Our Stores</h2>
+<div style="position: relative;" layout="row" layout-align="center">
+    <md-input-container>
+        <label>Name</label>
+        <input type="text" name="name" ng-model="ctrl.storeName">
+    </md-input-container>
+    <md-input-container>
+        <label>City</label>
+        <input type="text" name="city" ng-model="ctrl.storeCity">
+    </md-input-container>
+    <md-input-container>
+        <label>Phone</label>
+        <input type="text" name="phone" ng-model="ctrl.storePhone">
+    </md-input-container>
+</div>
+<br>
+<div class="items" layout="row" layout-wrap>
+    <Store ng-repeat="store in ctrl.stores | filter: {name: ctrl.storeName, city: ctrl.storeCity, phone: ctrl.storePhone}" store="store"></Store>
+</div>
+<br>
+<br>
+<div id="googleMap" class="gMap"></div>
