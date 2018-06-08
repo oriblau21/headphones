@@ -33,7 +33,7 @@
             })
             .state('headphones', {
                 url: '/headphones',
-                component: 'headphones',
+                component: 'headphonesList',
                 resolve: {
                     headphones: function(Factory){
                         return Factory.getAllHeadphones();
@@ -43,7 +43,7 @@
                     }
                 }
             })
-            .state('headphones', {
+            .state('headphonesDetails', {
                 url: '/headphones/:id',
                 component: 'headphones',
                 resolve: {

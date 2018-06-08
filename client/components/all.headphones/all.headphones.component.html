@@ -1,0 +1,38 @@
+<div class="headphones-filters">
+    Search by name:
+    <input class="form-control" type="text" ng-model="ctrl.searchText"/>
+    <select class="form-control" ng-model="ctrl.orderbyfilter">
+        <option selected value="">select filter</option>
+        <option value="+price">price - low to high </option>
+        <option value="-price">price - high to low</option>
+    </select>
+</div>
+<section layout="row">
+    <aside flex="15" class="checkbox-filters">
+        <div class="aside-filter-header">
+            <h3 class="">Filter By Type:</h3>
+        </div>        
+        <div class="checkbox" ng-repeat="headphonesType in ctrl.headphonesTypeList">
+            <label>
+                <input type="checkbox" ng-model="ctrl.typeFilter[headphonesType.name]" />
+                {{headphonesType.name}}
+            </label>
+        </div>        
+        <div class="aside-filter-header">
+            <h3 class="">Filter By Noise Canceling Level:</h3>
+        </div>
+        <div class="checkbox" ng-repeat="cancelLvl in ctrl.noiseCancelingLevels">
+            <label>
+                <input type="checkbox" ng-model="ctrl.noiseCancelFilter[cancelLvl.key]" />
+                {{cancelLvl.value}}
+            </label>
+        </div>
+    </aside>
+    <div flex class="">        
+        <div class="items" layout="row" layout-wrap>
+            <headphones-item flex="33" ng-repeat="headphones in (ctrl.filteredHeadphones = (ctrl.headphones | filter:{name:ctrl.searchText} | filter:ctrl.filterByType | filter:ctrl.filterByNoiseCancelingLevel | orderBy:ctrl.orderbyfilter))" headphones="headphones" add-to-cart="ctrl.addToCart" show-price="ctrl.showPrice">
+            </headphones-item>
+            <h4 class="searchResultErr" ng-if="!ctrl.filteredHeadphones.length">There are no matched items</h4>
+        </div>
+    </div>
+</section>

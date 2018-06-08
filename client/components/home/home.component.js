@@ -33,7 +33,7 @@
             var c = document.getElementById("myCanvas");
             var ctx = c.getContext("2d");
             ctx.font = "35px Arial";
-            ctx.strokeText("Welocome To Tas", 10, 50);   
+            ctx.strokeText("Welcome", 10, 50);   
         }
 
         function initData(data) {
