@@ -1,0 +1,10 @@
+<div class="">
+	<canvas id="myCanvas" height="100" width="400"></canvas>
+	<h1>Just for you...</h1>
+	<h3 class="homeTitle">Meet our Exclusive collection</h3>
+	<div layout="row">
+		<headphones-item flex ng-repeat="headphones in ctrl.headphones | orderBy:'-price' | limitTo:3"
+				  headphones="headphones" add-to-cart="ctrl.addToCart" show-price="ctrl.showPrice">
+		</headphones-item>
+	</div>
+</div>

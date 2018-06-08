@@ -5,7 +5,7 @@ const HeadphoneType = mongoose.model('HeadphoneType');
 const socket = require('../socket.io.js');
 
 module.exports.getAllHeadphoneTypes = (req, res) => {
-    TeaType.find().then(results => {
+    Type.find().then(results => {
         res.json(results);
     }).catch(err => {
         console.log(err);
