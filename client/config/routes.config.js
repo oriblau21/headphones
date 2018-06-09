@@ -64,6 +64,15 @@
                     }
                 }                
             })
+            .state('manager-statistics', {
+                url: '/manager-statistics',
+                component: 'managerStatistics',
+                resolve: {
+                    headphones: function(Factory){
+                        return Factory.getAllHeadphones();
+                    }
+                }                
+            })
             .state('manager-headphonestypes', {
                 url: '/manager-headphonestypes',
                 component: 'manageTypes',
