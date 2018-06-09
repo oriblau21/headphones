@@ -1,0 +1,20 @@
+<div class="" layout-align="start center">
+	<h3 class="cartTitle" ng-if="ctrl.cartItems.length">SHOPPING CART</h3>
+	<section layout="row" layout-align="center" layout-wrap>
+		<headphones-item ng-repeat="headphones in ctrl.cartItems" headphones="headphones.item" add-to-cart="ctrl.addToCart" show-price="ctrl.showPrice">
+			<div class="qtyWrap">
+				<lable>Quantity:</lable>
+				<input class="qty" type="number" min="1" max="100" ng-change="ctrl.updateQty(headphones)" ng-model="headphones.qty"/>
+			</div>
+			<h5> Total: {{headphones.item.price * headphones.qty | currency}}</h5>
+			<md-button class="md-primary" ng-click="ctrl.removeItem(headphones)">Remove</md-button>
+		</headphones-item>
+	</section>
+	<h3 class="cart-total" ng-if="ctrl.cartItems.length"> TOTAL:
+		<span> {{ ctrl.totalUSDPrice | currency}}
+			<span ng-if="ctrl.totalNISPrice">({{ctrl.totalNISPrice}}₪)</span>
+		</span>
+		</h3>
+	<md-button class="Checkout md-primary md-raised" ng-click="ctrl.checkout($event)" ng-if="ctrl.cartItems.length">Checkout Now</md-button>
+	<h3 ng-if="!ctrl.cartItems.length">You have no items in your shopping cart.</h3>
+</div>
