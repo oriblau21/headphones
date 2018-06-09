@@ -1,0 +1,62 @@
+<!-- <section class="add-edit-headphones-dialog"> -->
+        <form name="headphonesForm" class="add-edit-headphones-dialog"> 
+    <!-- <md-toolbar> -->
+        <div class="title-wrapper">
+            <h1>{{ctrl.title}}</h1>
+            <md-button class="close-dialog md-primary mdraised" ng-click="ctrl.close()">X</md-button>
+        </div>
+    <!-- </md-toolbar> -->
+    <md-dialog-content class="container">
+        
+            <md-input-container>
+                <label>Name</label>
+                <input type="text" name="headphonesName" required ng-model="ctrl.headphones.name">
+                <div ng-messages="headphonesForm.headphonesName.$error">
+                    <div ng-message="required">The headphones name is required.</div>
+                </div>
+            </md-input-container>
+            <md-input-container>
+                <label>Type</label>
+                <md-select name="headphonesType" ng-model="ctrl.headphones.headphonesType" required>
+                    <md-option ng-repeat="type in ctrl.headphonesTypes" ng-value="type.name">
+                        {{type.name}}
+                    </md-option>
+                </md-select>
+                <div ng-messages="headphonesForm.headphonesType.$error">
+                    <div ng-message="required">The headphones type is required.</div>
+                </div>
+            </md-input-container>
+            <md-input-container>
+                <label>Price</label>
+                <input type="number" min="1" name="headphonesPrice" ng-model="ctrl.headphones.price" required>
+                <div ng-messages="headphonesForm.headphonesPrice.$error">
+                    <div ng-message="required">The headphones price is required.</div>
+                </div>
+            </md-input-container>
+            <md-input-container>
+                <label>Noise Canceling Level</label>
+                <md-select name="cancelLevel" ng-model="ctrl.headphones.noiseCancelingLevel" required>
+                    <md-option ng-repeat="cancelLevel in ctrl.noiseCancelingLevels" ng-value="cancelLevel.key">
+                        {{cancelLevel.value}}
+                    </md-option>
+                </md-select>
+                <div ng-messages="headphonesForm.cancelLevel.$error">
+                    <div ng-message="required">The headphones' noise Canceling level is required.</div>
+                </div>
+            </md-input-container>
+            <md-input-container>
+                <label>Description</label>
+                <textarea ng-model="ctrl.headphones.description"></textarea>
+            </md-input-container>
+            <md-input-container class="image-uploader-wrapper">
+                <span class="image-uploader-text">Add Picture</span>
+                <input type="file" class="image-uploader-button" ngf-select ng-model="ctrl.headphonesImage" required name="file" aria-label="add image" accept="image/*" ngf-max-size="5MB" />
+                <p>{{ctrl.headphonesImage.name}}</p>
+            </md-input-container>
+            <div>
+                <md-button class="md-primary md-raised" ng-disabled="headphonesForm.$invalid" ng-click="ctrl.save()">Save</md-button>
+            </div>
+        
+    </md-dialog-content>
+</form>
+<!-- </section> -->

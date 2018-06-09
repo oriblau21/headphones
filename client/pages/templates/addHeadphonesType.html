@@ -1,0 +1,19 @@
+<form name="ctrl.headphonesTypeForm" class="add-edit-headphones-dialog"> 
+    <div class="title-wrapper">
+        <h1>{{ctrl.title}}</h1>
+        <md-button class="close-dialog md-primary md-raised" ng-click="ctrl.close()">X</md-button>
+    </div>
+    <md-dialog-content class="container">
+        <md-input-container>
+            <label>Name</label>
+            <input type="text" name="headphonesTypeName" required ng-change="ctrl.refreshValidation()" ng-model="ctrl.headphonesType.name">
+            <div ng-messages="ctrl.headphonesTypeForm.headphonesTypeName.$error">
+                <div ng-message="required">The type name is required.</div>
+                <div ng-show="ctrl.isAlreadyExists">The name is already exists</div>
+            </div>
+        </md-input-container>
+        <div>
+            <md-button class="md-primary md-raised" ng-disabled="headphonesTypeForm.$invalid" ng-click="ctrl.save()">Save</md-button>
+        </div>
+    </md-dialog-content>
+</form>
