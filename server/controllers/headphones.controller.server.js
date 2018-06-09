@@ -14,17 +14,7 @@ module.exports.getAllHeadphones = (req, res) => {
             $group: {
                 _id: '$headphonesType',
                 headphones: {
-                   $push: {
-                       _id: '$_id',
-                       name: "$name",
-                       price: "$price",
-                       noiseCancelingLevel: '$noiseCancelingLevel',
-                       description: "$description",
-                       image: "$image",
-                       creationDate: "$creationDate",
-                       updateDate: "$updateDate",
-                       headphonesType: "$headphonesType"
-                   } 
+                   $push: '$$ROOT'
                }
            }
         }
