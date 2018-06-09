@@ -1,4 +1,4 @@
-angular.module('headphonesStore').
+angular.module('cartModule').
     directive('addToCart', ['CartFactory', function(CartFactory){
         return {
             restrict: 'E',

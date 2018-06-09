@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('headphonesStore')
+        .module('managerModule')
         .component('manageHeadphones', {
             controller: ManageHeadphonesController,
             controllerAs: 'ctrl',

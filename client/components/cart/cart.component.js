@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('headphonesStore').
+        .module('cartModule').
         component('cart', {
             controller: CartController,
             controllerAs: 'ctrl',
