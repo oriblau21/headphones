@@ -58,7 +58,7 @@ module.exports = (app) => {
 
     app.route('/api/cart').get(headphonesController.cartCheckout);
 
-    app.route('api/view')
+    app.route('/api/view')
         .get(viewsController.recommend)
         .put(viewsController.newView);
 

@@ -12,13 +12,14 @@
             }
         });
 
-    Controller.$inject = [];
+    Controller.$inject = ['ViewFactory'];
 
-    function Controller(){
+    function Controller(ViewFactory){
         var self = this;
 
         self.$onInit = function() {
             self.headphones = self.headphones.data;
+            ViewFactory.newView(self.headphones.noiseCancelingLevel, self.headphones._id);
             self.addToCart = true;
             self.imageUrl = self.headphones.image ? 'public/Images/' + self.headphones.image : 'public/Images/headphones.jpg';
         };        

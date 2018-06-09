@@ -12,10 +12,11 @@
             }
         });
 
-    HomeController.$inject = ['socketService'];
+    HomeController.$inject = ['socketService', 'ViewFactory'];
 
-    function HomeController(socketService) {
+    function HomeController(socketService, ViewFactory) {
         var self = this;
+        self.recommend;
         socketService.emit('home', 'controller');
         socketService.on('data', function(data) {
             console.log(data);
@@ -25,6 +26,11 @@
             self.headphones = initData(self.headphones.data);
             self.addToCart = false;
             self.showPrice = false;
+            ViewFactory.recommedation().then((data, err) => {
+                self.recommend = data.data;
+            }).catch(()=> {
+
+            });
 
             initCanvasTitle();            
         }
