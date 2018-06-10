@@ -17,6 +17,29 @@ module.exports.getAllStores = (req, res) => {
     });
 };
 
+module.exports.search = (req, res) => {
+    const name = req.body.name || '';
+    const city = req.body.city || '';
+    const phone = req.body.phone || '';
+    let opts = {};
+
+    if (city !== '') {
+        opts.city = city;
+    }
+    if (name !== '') {
+        opts.name = name;
+    }
+    if (phone !== '') {
+        opts.phone = phone;
+    }
+    Store.find(opts).then(results => {
+        res.json(results);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+};
+
 module.exports.fillData = (req, res) => {
     Store.find().then((results) => {
         if (results.length == 0) {

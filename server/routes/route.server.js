@@ -44,6 +44,9 @@ module.exports = (app) => {
         .post(headphonesController.addHeadphones)
         .put(headphonesController.updateHeadphones);
 
+    app.route('/api/headphonesSearch')
+        .post(headphonesController.search);
+
     app.route('/api/headphones/:id')
         .get(headphonesController.getHeadphonesById)
         .delete(headphonesController.deleteHeadphones);
@@ -55,6 +58,8 @@ module.exports = (app) => {
         .post(headphonesTypesController.addHeadphonesType);
 
     app.route('/api/stores').get(storesController.getAllStores);
+
+    app.route('/api/storesSearch').post(storesController.search);
 
     app.route('/api/cart').get(headphonesController.cartCheckout);
 
