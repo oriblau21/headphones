@@ -6,7 +6,30 @@ const socket = require('../socket.io.js');
 
 module.exports.cartCheckout = (req, res) => {
     socket.emit('checkout', {message: 'succeeded'});
-}
+};
+
+module.exports.search = (req, res) => {
+    const name = req.body.name || '';
+    const noiseCancelingLevels = req.body.levels || [];
+    const types = req.body.types || [];
+    let opts = {};
+
+    if (types.length !== 0) {
+        opts.headphonesType = { $in: types };
+    }
+    if (name !== '') {
+        opts.name = name;
+    }
+    if (noiseCancelingLevels.length !== 0) {
+        opts.noiseCancelingLevel = { $in: noiseCancelingLevels };
+    }
+    Headphones.find(opts).then(results => {
+        res.json(results);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+};
 
 module.exports.getAllHeadphones = (req, res) => {
     Headphones.aggregate([
