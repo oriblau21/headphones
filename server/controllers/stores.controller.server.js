@@ -24,13 +24,13 @@ module.exports.search = (req, res) => {
     let opts = {};
 
     if (city !== '') {
-        opts.city = city;
+        opts.city = { $regex: escapeRegExp(city.trim()), $options: 'i' };
     }
     if (name !== '') {
-        opts.name = name;
+        opts.name = { $regex: escapeRegExp(name.trim()), $options: 'i' };
     }
     if (phone !== '') {
-        opts.phone = phone;
+        opts.phone = { $regex: escapeRegExp(phone.trim()), $options: 'i' };
     }
     Store.find(opts).then(results => {
         res.json(results);

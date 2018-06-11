@@ -3,6 +3,7 @@
 const mongoose = require('mongoose');
 const Headphones = mongoose.model('Headphones');
 const socket = require('../socket.io.js');
+const { escapeRegExp } = require('lodash');
 
 module.exports.cartCheckout = (req, res) => {
     socket.emit('checkout', {message: 'succeeded'});
@@ -18,7 +19,7 @@ module.exports.search = (req, res) => {
         opts.headphonesType = { $in: types };
     }
     if (name !== '') {
-        opts.name = name;
+        opts.name = { $regex: escapeRegExp(name.trim()), $options: 'i' };
     }
     if (noiseCancelingLevels.length !== 0) {
         opts.noiseCancelingLevel = { $in: noiseCancelingLevels };
