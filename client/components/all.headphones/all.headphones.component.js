@@ -37,6 +37,19 @@
 			}
 		}
 
+		self.search = () =>{
+			let types = self.headphonesTypeList.filter((obj) => self.typeFilter[obj.name]);
+			types = types.map((obj) => obj.name);
+			let levels = self.noiseCancelingLevels.filter((obj) => self.noiseCancelFilter[obj.key]);
+			levels = levels.map((obj) => obj.key);
+			Factory.search(self.searchText, types, levels).then((data, err) => {
+				if (data.data) {
+					self.headphones = data.data;
+				}
+			}).catch(()=>{
+			});
+		};
+
 		self.filterByType = function(headphones){
 			for	(var i=0; i< self.headphonesTypeList.length; i++){
 				if (self.typeFilter[self.headphonesTypeList[i].name]){

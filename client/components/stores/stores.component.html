@@ -12,10 +12,13 @@
         <label>Phone</label>
         <input type="text" name="phone" ng-model="ctrl.storePhone">
     </md-input-container>
+    <md-input-container>
+        <input type="button" value="SEARCH" name="submit" ng-click="ctrl.search()">
+    </md-input-container>
 </div>
 <br>
 <div class="items" layout="row" layout-wrap>
-    <Store ng-repeat="store in ctrl.stores | filter: {name: ctrl.storeName, city: ctrl.storeCity, phone: ctrl.storePhone}" store="store"></Store>
+    <Store ng-repeat="store in ctrl.stores" store="store"></Store>
 </div>
 <br>
 <br>

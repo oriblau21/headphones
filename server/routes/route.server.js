@@ -4,6 +4,7 @@ const headphonesController = require('../controllers/headphones.controller.serve
 const headphonesTypesController = require('../controllers/headphones.types.controller.server');
 const storesController = require('../controllers/stores.controller.server');
 const viewsController = require('../controllers/view.controller.server');
+const twitterController = require('../controllers/twitter.controller.server');
 const path = require('path');
 const multer = require('multer');
 
@@ -36,6 +37,7 @@ module.exports = (app) => {
         headphonesController.fillData();
         headphonesTypesController.fillData();
         storesController.fillData();
+        twitterController.init();
 		res.sendFile(path.resolve('server/views/index.html'));
 	});
 
@@ -43,6 +45,9 @@ module.exports = (app) => {
         .get(headphonesController.getAllHeadphones)
         .post(headphonesController.addHeadphones)
         .put(headphonesController.updateHeadphones);
+
+    app.route('/api/headphonesSearch')
+        .post(headphonesController.search);
 
     app.route('/api/headphones/:id')
         .get(headphonesController.getHeadphonesById)
@@ -56,11 +61,16 @@ module.exports = (app) => {
 
     app.route('/api/stores').get(storesController.getAllStores);
 
+    app.route('/api/storesSearch').post(storesController.search);
+
     app.route('/api/cart').get(headphonesController.cartCheckout);
 
-    app.route('api/view')
+    app.route('/api/view')
         .get(viewsController.recommend)
         .put(viewsController.newView);
 
+    app.route('/api/twits')
+        .get(twitterController.init)
+        .post(twitterController.postTweet);
 }
 

@@ -2,10 +2,15 @@ angular.module('headphonesStore').
     factory('ViewFactory', function StoreFactory($http){
         var service = {
             newView: newView,
-            recommedation: recommedation
+            recommedation: recommedation,
+            twit: twit
         }
 
         return service;
+
+        function twit(text) {
+            return $http.post('/api/twits', { text });
+        }
     
         function newView(noiseCancelLevel, prodId) {
             const now = new Date();

@@ -16,34 +16,34 @@ module.exports.newView = (req, res) => {
 };
 
 module.exports.recommend = (req, res) => {
-    view.aggregate([
+    View.aggregate([
         {
             $group: {
-                level: '$noiseCancelLevel',
+                _id: '$noiseCancelLevel',
                 views: {
-                   $push: {
-                        noiseCancelLevel: '$noiseCancelLevel',
-                        viewDate: '$viewDate',
-                        productId: '$productId'
-                   } 
+                   $push: '$$ROOT'
                }
            }
         }
     ]).then(results => {
-        results.sort((a, b) => {
-            return b.views.length - a.views.length;
-        });
-        results[0].views.sort((a, b) => {
-            return new Date(b.viewDate) - new Date(a.viewDate);
-        });
-        const topLevel = results[0].level;
-        const lastProduct = results[0].views[0].productId;
-        Headphones.findOne({ noiseCancelingLevel: topLevel, _id: { $ne: lastProduct } }).then(obj => {
-            res.json(obj);
-        }).catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+        if (results.length === 0) {
+            res.json(null);
+        } else {
+            results.sort((a, b) => {
+                return b.views.length - a.views.length;
+            });
+            results[0].views.sort((a, b) => {
+                return new Date(b.viewDate) - new Date(a.viewDate);
+            });
+            const topLevel = results[0]._id;
+            const lastProduct = results[0].views[0].productId;
+            Headphones.findOne({ noiseCancelingLevel: topLevel, _id: { $ne: lastProduct } }).then(obj => {
+                res.json(obj);
+            }).catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+        }
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);

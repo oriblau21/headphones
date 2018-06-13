@@ -11,6 +11,9 @@
 body {
 	background-color: #ffffff;
 	font-family: basicFont,Monospace,sans-serif;
+	position: absolute !important;
+	margin-left: 8% !important;
+	width: auto !important;
 }
 
 md-dialog {
@@ -96,6 +99,11 @@ a, a:hover, a:focus{
 .headphones-filters{
 	width: 600px;
 	margin: 5px auto 30px auto;
+}
+
+.headphones-filters md-input-container{
+	vertical-align: -webkit-baseline-middle;
+    padding-top: 10px;
 }
 .headphonesImg{
     height: 160px;
@@ -227,7 +235,7 @@ a, a:hover, a:focus{
 .mainView{
 	background-color: #ffffff;
 	margin: 0 auto 50px auto;
-	width: 1300px;
+	width: 1300px !important;
 }
 .cartTitle{
 	margin-left: 10px;

@@ -8,10 +8,15 @@ angular.module('headphonesStore').
             update,
             delete: deleteHeadphones,
             getAllNoiseCancelingLevels: getAllNoiseCancelingLevels,
-            addType: addType
+            addType: addType,
+            search: search
         }
 
         return service;
+        
+        function search(name, types, levels) {
+            return $http.post('/api/headphonesSearch', {name, types, levels});
+        }
     
         function getAllHeadphones() {
             return $http.get('/api/headphones');

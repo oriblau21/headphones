@@ -7,4 +7,9 @@
 				  headphones="headphones" add-to-cart="ctrl.addToCart" show-price="ctrl.showPrice">
 		</headphones-item>
 	</div>
+	<h3 ng-show="ctrl.recommend" class="homeTitle">Reccomended for you</h3>
+	<div layout="row" ng-show="ctrl.recommend">
+		<headphones-item ng-if="ctrl.recommend" flex headphones="ctrl.recommend" add-to-cart="ctrl.addToCart" show-price="ctrl.showPrice">
+		</headphones-item>
+	</div>
 </div>

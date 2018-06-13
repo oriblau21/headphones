@@ -12,9 +12,9 @@
             }
         });
 
-    StoresController.$inject = ['$http'];
+    StoresController.$inject = ['$http', 'StoreFactory'];
 
-    function StoresController($http) {
+    function StoresController($http, StoreFactory) {
         var self = this;
 
         self.$onInit = function () {
@@ -48,5 +48,14 @@
                 })
             })
         }
+
+        self.search = ()=>{
+            StoreFactory.search(self.storeName, self.storeCity, self.storePhone).then((data, err) => {
+                if (data.data) {
+                    self.stores = data.data;
+                }
+            }).catch(err => {
+            });
+        };
     }
 })()

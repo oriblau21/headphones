@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('headphonesStore')
+		.module('cartModule')
 		.factory('CartFactory', ['$http', '$q', CartFactory]);
 		
 	function CartFactory($http, $q){
