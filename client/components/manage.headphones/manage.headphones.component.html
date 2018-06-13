@@ -1,14 +1,16 @@
 <div class="headphones-filters">
-    Search by name:
-    <input class="form-control" type="text" ng-model="ctrl.searchText"/>
-    <select class="form-control" ng-model="ctrl.orderbyfilter">
-        <option selected value="">select filter</option>
-        <option value="+price">price - low to high </option>
-        <option value="-price">price - high to low</option>
-    </select>
+    Say something on twitter:
+    <input class="form-control" type="text" ng-model="ctrl.twit"/>
+    <md-input-container>
+        <input type="button" value="TWIT!" name="submit" ng-click="ctrl.postTwit()">
+    </md-input-container>
 </div>
 <section layout="row">
     <aside flex="15" class="checkbox-filters">
+        <div>
+            <h3>Search by name:</h3>
+            <input class="form-control" type="text" ng-model="ctrl.searchText"/>
+        </div>
         <div class="aside-filter-header">
             <h3 class="">Filter By Type:</h3>
         </div>        

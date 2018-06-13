@@ -4,6 +4,7 @@ const headphonesController = require('../controllers/headphones.controller.serve
 const headphonesTypesController = require('../controllers/headphones.types.controller.server');
 const storesController = require('../controllers/stores.controller.server');
 const viewsController = require('../controllers/view.controller.server');
+const twitterController = require('../controllers/twitter.controller.server');
 const path = require('path');
 const multer = require('multer');
 
@@ -36,6 +37,7 @@ module.exports = (app) => {
         headphonesController.fillData();
         headphonesTypesController.fillData();
         storesController.fillData();
+        twitterController.init();
 		res.sendFile(path.resolve('server/views/index.html'));
 	});
 
@@ -67,5 +69,8 @@ module.exports = (app) => {
         .get(viewsController.recommend)
         .put(viewsController.newView);
 
+    app.route('/api/twits')
+        .get(twitterController.init)
+        .post(twitterController.postTweet);
 }
 

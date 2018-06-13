@@ -13,15 +13,16 @@
             }
         });
 
-    ManageHeadphonesController.$inject = ['$mdDialog', 'Factory', 'CartFactory', '$timeout', 'socketService'];
+    ManageHeadphonesController.$inject = ['$mdToast', '$mdDialog', 'Factory', 'CartFactory', '$timeout', 'socketService', 'ViewFactory'];
 
-    function ManageHeadphonesController($mdDialog, Factory, CartFactory, $timeout, socketService) {
+    function ManageHeadphonesController($mdToast, $mdDialog, Factory, CartFactory, $timeout, socketService, ViewFactory) {
         var self = this;
 		
 		self.$onInit = function() {
 			self.headphones = initData(self.headphones.data);
 			self.headphonesTypeList = self.headphonesTypeList.data;
-			self.orderbyfilter = "";
+            self.orderbyfilter = '';
+            self.twit = '';
 			self.addToCart = true;
 			self.showPrice = true;
 			self.noiseCancelingLevels = Factory.getAllNoiseCancelingLevels();
@@ -35,7 +36,30 @@
 			for (var i=0; i< self.noiseCancelingLevels.length; i++){
 				self.noiseCancelFilter[self.noiseCancelingLevels[i].key]=true;
 			}
-		}
+        }
+        
+        self.postTwit = () =>{
+            ViewFactory.twit(self.twit).then((data, err)=> {
+                let msg = 'Something went wrong :(';
+                if (!err) {
+                    msg = 'Twit posted!';
+                    self.twit = '';
+                }
+                $mdToast.show(
+                    $mdToast.simple()
+                      .textContent(msg)
+                      .position('bottom right')
+                      .hideDelay(3000)
+                  );
+            }).catch(()=>{
+                $mdToast.show(
+                    $mdToast.simple()
+                      .textContent('Something went wrong :(')
+                      .position('bottom right')
+                      .hideDelay(3000)
+                  );
+            });
+        };
 
 		self.filterByType = function(headphones){
 			for	(var i=0; i< self.headphonesTypeList.length; i++){
