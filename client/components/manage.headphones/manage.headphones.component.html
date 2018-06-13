@@ -2,7 +2,7 @@
     Say something on twitter:
     <input class="form-control" type="text" ng-model="ctrl.twit"/>
     <md-input-container>
-        <input type="button" value="TWIT!" name="submit" ng-click="ctrl.postTwit()">
+        <input ng-disabled="ctrl.twit === ''" type="button" value="TWIT!" name="submit" ng-click="ctrl.postTwit()">
     </md-input-container>
 </div>
 <section layout="row">
