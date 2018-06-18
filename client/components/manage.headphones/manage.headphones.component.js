@@ -35,7 +35,9 @@
 			self.noiseCancelFilter = {};
 			for (var i=0; i< self.noiseCancelingLevels.length; i++){
 				self.noiseCancelFilter[self.noiseCancelingLevels[i].key]=true;
-			}
+            }
+            
+            initCanvasTitle();
         }
         
         self.postTwit = () =>{
@@ -183,6 +185,13 @@
                     }
                 }
             });
+        }
+
+        function initCanvasTitle() {
+            var c = document.getElementById("titlecanvas");
+            var ctx = c.getContext("2d");
+            ctx.font = "35px Comic Sans";
+            ctx.strokeText("Manage Headphones", 10, 50);   
         }
     }
 })();

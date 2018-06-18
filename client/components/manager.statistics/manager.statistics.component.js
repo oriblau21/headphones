@@ -73,6 +73,8 @@
                     values: self.headphonesByLevels
                 }
             ]
+
+            initCanvasTitle();
 		}
 
 		function initData(data) {
@@ -94,6 +96,13 @@
             }
 
 			return levels;
+        }
+
+        function initCanvasTitle() {
+            var c = document.getElementById("titlecanvas");
+            var ctx = c.getContext("2d");
+            ctx.font = "35px Comic Sans";
+            ctx.strokeText("Statistics", 10, 50);   
         }
     }
 })();

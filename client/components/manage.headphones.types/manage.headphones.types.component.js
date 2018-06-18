@@ -19,6 +19,7 @@
 
         self.$onInit = function() {
             self.headphonesTypes = self.headphonesTypes.data;
+            initCanvasTitle();
         };
 
         self.openDialog = function(event, headphonesType) {
@@ -67,6 +68,13 @@
                     }
                 }
             });
+        }
+
+        function initCanvasTitle() {
+            var c = document.getElementById("titlecanvas");
+            var ctx = c.getContext("2d");
+            ctx.font = "35px Comic Sans";
+            ctx.strokeText("Manage Brands", 10, 50);   
         }
     }
 })();

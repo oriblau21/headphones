@@ -21,6 +21,7 @@
             self.addToCart = false;
             self.showPrice = false;
             self.getTotalPrice();
+            initCanvasTitle();
         }
         
         self.removeItem = function(headphones){		
@@ -71,6 +72,13 @@
             }, function() {
 
             });
+        }
+
+        function initCanvasTitle() {
+            var c = document.getElementById("titlecanvas");
+            var ctx = c.getContext("2d");
+            ctx.font = "35px Comic Sans";
+            ctx.strokeText("My Cart", 10, 50);   
         }
     };
 })();

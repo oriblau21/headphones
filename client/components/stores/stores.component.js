@@ -47,6 +47,8 @@
                     });
                 })
             })
+
+            initCanvasTitle();
         }
 
         self.search = ()=>{
@@ -57,5 +59,12 @@
             }).catch(err => {
             });
         };
+
+        function initCanvasTitle() {
+            var c = document.getElementById("titlecanvas");
+            var ctx = c.getContext("2d");
+            ctx.font = "35px Comic Sans";
+            ctx.strokeText("Our Stores", 10, 50);   
+        }
     }
 })()
