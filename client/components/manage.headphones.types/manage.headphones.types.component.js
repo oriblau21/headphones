@@ -23,7 +23,7 @@
 
         self.openDialog = function(event, headphonesType) {
             $mdDialog.show({
-                templateUrl: 'pages/templates/addType.html',
+                templateUrl: 'pages/templates/addHeadphonesType.html',
                 targetEvent: event,
                 clickOutsideToClose: true,
                 escapeToClose: true,
