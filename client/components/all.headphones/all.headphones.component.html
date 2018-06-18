@@ -4,36 +4,33 @@
     </div>
 </div>
 <section layout="row">
-    <aside flex="15" class="checkbox-filters">
-        <div>
-            <h3>Search by name:</h3>
-            <input class="form-control" type="text" ng-model="ctrl.searchText"/>
-        </div>
+    <aside flex="18" class="filters">
+        <md-input-container>
+            <label>Search by name</label>
+            <input ng-model="ctrl.searchText">
+        </md-input-container>
         <div class="aside-filter-header">
             <h3 class="">Filter By Type:</h3>
         </div>        
         <div class="checkbox" ng-repeat="headphonesType in ctrl.headphonesTypeList">
-            <label>
-                <input type="checkbox" ng-model="ctrl.typeFilter[headphonesType.name]" />
-                {{headphonesType.name}}
-            </label>
+            <md-checkbox ng-model="ctrl.typeFilter[headphonesType.name]" aria-label="Checkbox 1">
+            {{headphonesType.name}}
+            </md-checkbox>
         </div>        
         <div class="aside-filter-header">
             <h3 class="">Filter By Noise Canceling Level:</h3>
         </div>
         <div class="checkbox" ng-repeat="cancelLvl in ctrl.noiseCancelingLevels">
-            <label>
-                <input type="checkbox" ng-model="ctrl.noiseCancelFilter[cancelLvl.key]" />
-                {{cancelLvl.value}}
-            </label>
+            <md-checkbox ng-model="ctrl.noiseCancelFilter[cancelLvl.key]" aria-label="Checkbox 1">
+            {{cancelLvl.value}}
+            </md-checkbox>
         </div>
-        <div>
-            <md-input-container>
-                <input type="button" value="SEARCH" name="submit" ng-click="ctrl.search()">
-            </md-input-container>
+        <div layout="row" layout-align="center">
+            <md-button class="md-raised md-primary" 
+                       name="submit" ng-click="ctrl.search()">Search</md-button>
         </div>
     </aside>
-    <div flex class="">        
+    <div flex>        
         <div class="items" layout="row" layout-wrap>
             <headphones-item flex="33" ng-repeat="headphones in ctrl.headphones" headphones="headphones" add-to-cart="ctrl.addToCart" show-price="ctrl.showPrice">
             </headphones-item>

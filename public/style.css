@@ -208,12 +208,10 @@ h1.title{
 	text-align: center;
 }
 
-
-
-.checkbox-filters{
-	margin-top: 10px;
-	margin-left: 20px;
-	padding: 0;
+aside.filters{
+	border-right: 1px solid #e8e8e8;
+	padding-left: 25px;
+    padding-right: 25px;
 }
 
 .aside-filter-header {
