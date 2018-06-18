@@ -1,6 +1,7 @@
 <div class="">
-	<canvas id="myCanvas" height="100" width="400"></canvas>
-	<h1>Just for you...</h1>
+	<div class="cover_img">
+		<div class="foryou_title"><canvas id="myCanvas" height="100" width="400"></canvas></div>
+	</div>
 	<h3 class="homeTitle">Meet our Exclusive collection</h3>
 	<div layout="row">
 		<headphones-item flex ng-repeat="headphones in ctrl.headphones | orderBy:'-price' | limitTo:3"

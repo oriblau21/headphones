@@ -38,8 +38,8 @@
         function initCanvasTitle() {
             var c = document.getElementById("myCanvas");
             var ctx = c.getContext("2d");
-            ctx.font = "35px Arial";
-            ctx.strokeText("Welcome", 10, 50);   
+            ctx.font = "35px Comic Sans";
+            ctx.strokeText("Just For You", 10, 50);   
         }
 
         function initData(data) {

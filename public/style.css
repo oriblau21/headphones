@@ -2,20 +2,29 @@
     font-family: basicFont;
     src: url(fonts/Heebo-Regular.ttf);
 }
+
 *{
-	margin: 0;
-    font-family: basicFont,Monospace,sans-serif !important;
+    font-family: basicFont, Monospace, sans-serif !important;
 	font-size: 15px;
 }
 
-body {
-	background-color: #ffffff;
-	font-family: basicFont,Monospace,sans-serif;
-	position: absolute !important;
-	margin-left: 8% !important;
-	width: auto !important;
+.cover_img{
+    background-size: cover;
+    background-image: url("Images/background.jpg");
+    height: 390px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-position-x: inherit;
 }
 
+div.foryou_title{
+	width: 234px;
+    height: 77px;
+    background-color: white;
+    position: absolute;
+    margin-top: 261px;
+    border-left: 60px solid #802849;
+}
 md-dialog {
 	overflow: hidden;
 }
@@ -26,7 +35,6 @@ md-dialog md-dialog-content:not([layout=row])>:first-child:not(.md-subheader) {
 
 .header {
 	background-color: #fafafa;
-	margin-bottom: 20px;
 }
 a, a:hover, a:focus{
    text-decoration: none; 
@@ -106,9 +114,19 @@ a, a:hover, a:focus{
     padding-top: 10px;
 }
 .headphonesImg{
-    height: 160px;
-    width: 160px;
+    height: 300px;
+    width: 300px;
 }
+
+.headphone-container{
+	padding:30px;
+} 
+
+h1.title{
+	font-size: 26px;
+    text-decoration: underline;
+}
+
 .headphonesItem{
 	display: block;
 	padding-top: 15px;
@@ -162,11 +180,6 @@ a, a:hover, a:focus{
 	width: 30px;
 }
 
-.narrow{
-	margin-top: 30px;
-	padding-left: 130px;
-	padding-right: 130px;
-}
 .about-container {
 	margin: 0 auto;
 	width: 1000px;
@@ -235,7 +248,6 @@ a, a:hover, a:focus{
 .mainView{
 	background-color: #ffffff;
 	margin: 0 auto 50px auto;
-	width: 1300px !important;
 }
 .cartTitle{
 	margin-left: 10px;
@@ -339,9 +351,10 @@ a, a:hover, a:focus{
 .footer {
     position: fixed; 
     bottom: 0;
-    left: 0;
+    left:0;
     right: 0;
-	background-color: #f3eeee
+	background-color: #f3eeee;
+	margin-left:5px;
 }
 
 .headphonesCategory {

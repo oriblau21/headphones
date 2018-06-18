@@ -1,9 +1,13 @@
-<div class="narrow col-md-6">
-	<img class="headphonesImg" ng-src="{{ctrl.imageUrl}}"/> 
-	<h1> {{ctrl.headphones.name}} </h1>
-	<p> Type: {{ctrl.headphones.headphonesType}} </p>
-	<p> Noise Canceling Level: {{ctrl.headphones.noiseCancelingLevel}} </p>
-	<p> {{ctrl.headphones.description }} </p>
-	<h4> {{ctrl.headphones.price | currency}} | 30g</h4>
-	<add-to-cart add-to-cart="addToCart" headphones="headphones"></add-to-cart>
+<div class="headphone-container col-md-6">
+	<div layout="row" layout-align="start center">
+ 	<img class="headphonesImg" ng-src="{{ctrl.imageUrl}}"/> 
+	<div layout="column">
+		<h1 class="title"> {{ctrl.headphones.name}} </h1>
+		<p> Type: {{ctrl.headphones.headphonesType}} </p>
+		<p> Noise Canceling Level: {{ctrl.headphones.noiseCancelingLevel}} </p>
+		<p> {{ctrl.headphones.description }} </p>
+		<h4> {{ctrl.headphones.price | currency}} | 30g</h4>
+		<add-to-cart add-to-cart="addToCart" headphones="headphones"></add-to-cart>
+		</div>
+	</div>
 </div>

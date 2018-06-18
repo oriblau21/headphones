@@ -9,7 +9,7 @@
             <input type="text" name="headphonesTypeName" required ng-change="ctrl.refreshValidation()" ng-model="ctrl.headphonesType.name">
             <div ng-messages="ctrl.headphonesTypeForm.headphonesTypeName.$error">
                 <div ng-message="required">The type name is required.</div>
-                <div ng-show="ctrl.isAlreadyExists">The name is already exists</div>
+                <div ng-show="ctrl.isAlreadyExists">The name already exists</div>
             </div>
         </md-input-container>
         <div>
