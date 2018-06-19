@@ -3,6 +3,7 @@
 const mongoose = require('mongoose');
 const Store = mongoose.model('Store');
 const socket = require('../socket.io.js');
+const { escapeRegExp } = require('lodash');
 
 module.exports.getAllStores = (req, res) => {
     socket.on('home', (data) => {

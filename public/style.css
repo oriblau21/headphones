@@ -8,6 +8,12 @@
 	font-size: 15px;
 }
 
+.cart-btn{
+	position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
 /* Global */
 .no-margin{
 	margin:0;
@@ -21,7 +27,7 @@ div.divider{
 }
 .cartCounter{
 	position: absolute;
-	top: -2px;
+	top: -22px;
 	right: -12px;
 	font-size: 10px;
 	font-weight: bolder;
@@ -376,6 +382,15 @@ aside.filters{
 	padding: 5px;
 }
 
+<<<<<<< HEAD
+=======
+.headphonesCategory {
+	text-decoration: underline;
+    font-weight: 500;
+    text-shadow: 1px 1px rgba(0,0,0,0.87);
+}
+
+>>>>>>> 24daf40ef8a04cb0a57238ca57b865010b6ebd5e
 .aboutTitle {
 	text-decoration: underline;
 	font-size: 24pt; 
