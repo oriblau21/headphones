@@ -26,7 +26,7 @@ div.divider{
 }
 .cartCounter{
 	position: absolute;
-	top: -22px;
+	top: -2px;
 	right: -12px;
 	font-size: 10px;
 	font-weight: bolder;
