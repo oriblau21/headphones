@@ -245,7 +245,6 @@ aside.filters{
 }
 .mainView{
 	background-color: #ffffff;
-	margin: 0 auto 50px auto;
 }
 .cartTitle{
 	margin-left: 10px;
@@ -342,12 +341,11 @@ aside.filters{
 }
 
 .footer {
-    position: fixed; 
     bottom: 0;
     left:0;
     right: 0;
 	background-color: #f3eeee;
-	margin-left:5px;
+	padding: 5px;
 }
 
 .headphonesCategory {

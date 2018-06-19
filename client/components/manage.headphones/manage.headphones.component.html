@@ -3,39 +3,44 @@
         <canvas id="titlecanvas" height="100" width="400"></canvas>
     </div>
 </div>
-<div class="headphones-filters">
-    Say something on twitter:
-    <input class="form-control" type="text" ng-model="ctrl.twit"/>
-    <md-input-container>
-        <input ng-disabled="ctrl.twit === ''" type="button" value="TWIT!" name="submit" ng-click="ctrl.postTwit()">
-    </md-input-container>
-</div>
 <section layout="row">
-    <aside flex="15" class="checkbox-filters">
-        <div>
-            <h3>Search by name:</h3>
-            <input class="form-control" type="text" ng-model="ctrl.searchText"/>
-        </div>
+    <aside flex="18" class="filters">
+        <md-input-container>
+            <label>Search by name</label>
+            <input ng-model="ctrl.searchText">
+        </md-input-container>
         <div class="aside-filter-header">
             <h3 class="">Filter By Type:</h3>
         </div>        
         <div class="checkbox" ng-repeat="headphonesType in ctrl.headphonesTypeList">
-            <label>
-                <input type="checkbox" ng-model="ctrl.typeFilter[headphonesType.name]" />
-                {{headphonesType.name}}
-            </label>
+            <md-checkbox ng-model="ctrl.typeFilter[headphonesType.name]" aria-label="Checkbox 1">
+            {{headphonesType.name}}
+            </md-checkbox>
         </div>        
         <div class="aside-filter-header">
             <h3 class="">Filter By Noise Canceling Level:</h3>
         </div>
         <div class="checkbox" ng-repeat="cancelLvl in ctrl.noiseCancelingLevels">
-            <label>
-                <input type="checkbox" ng-model="ctrl.noiseCancelFilter[cancelLvl.key]" />
-                {{cancelLvl.value}}
-            </label>
+            <md-checkbox ng-model="ctrl.noiseCancelFilter[cancelLvl.key]" aria-label="Checkbox 1">
+            {{cancelLvl.value}}
+            </md-checkbox>
+        </div>
+        <div layout="row" layout-align="center">
+            <md-button class="md-raised md-primary" 
+                        name="submit" ng-click="ctrl.search()">Search</md-button>
         </div>
     </aside>
-    <div flex class="">        
+    <div flex>    
+        <div layout="row" layout-align="center">
+            <md-input-container>
+                <label>Say something on twitter</label>
+                <input ng-model="ctrl.twit">
+            </md-input-container>
+            <md-input-container>
+                <md-button class="md-raised md-primary" ng-disabled="ctrl.twit === ''"
+                        name="submit" ng-click="ctrl.postTwit()">Twit!</md-button>
+            </md-input-container>
+        </div>    
         <div class="items" layout="row" layout-wrap>
             <div class="headphones-item-wrapper" ng-class="{removed: ctrl.removed === headphones._id}" flex="33" ng-repeat="headphones in (ctrl.filteredHeadphones = (ctrl.headphones | filter:{name:ctrl.searchText} | filter:ctrl.filterByType | filter:ctrl.filterByNoiseCancelingLevel | orderBy:ctrl.orderbyfilter))">                
                 <headphones-item headphones="headphones" add-to-cart="false" show-price="ctrl.showPrice">
