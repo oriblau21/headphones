@@ -1,10 +1,10 @@
 @font-face {
-    font-family: basicFont;
+    font-family: siteFont;
     src: url(fonts/Heebo-Regular.ttf);
 }
 
 *{
-    font-family: basicFont, Monospace, sans-serif !important;
+    font-family: siteFont, Monospace, sans-serif !important;
 	font-size: 15px;
 }
 
