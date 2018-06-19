@@ -18,6 +18,10 @@
 	margin:0;
 }
 
+.no-padding{
+	padding:0;
+}
+
 div.divider{
 	border-bottom: 1px solid #e8e8e8;
 	height:5px;

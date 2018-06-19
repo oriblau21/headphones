@@ -3,14 +3,16 @@
         <canvas id="titlecanvas" height="100" width="400"></canvas>
     </div>
 </div>
-<div class="headphones-filters">
-        Search by name:
-        <input class="form-control" type="text" ng-model="ctrl.searchText"/>
+<div layout-padding>
+    <md-input-container class="no-padding">
+        <label>Search brand name</label>
+        <input ng-model="ctrl.searchText">
+    </md-input-container>  
 </div>
-<section class="headphones-types-list">
+<section layout-padding>
     <md-list>
-        <md-subheader> Types</md-subheader>
-        <md-list-item ng-repeat="headphonesType in ctrl.headphonesTypes | filter:ctrl.searchText">
+        <md-subheader>Brands - {{filtered.length}} results</md-subheader>
+        <md-list-item ng-repeat="headphonesType in ctrl.headphonesTypes | filter:ctrl.searchText as filtered">
             <h2>{{headphonesType.name}}</h2>
         </md-list-item>
     </md-list>
