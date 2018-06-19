@@ -23,6 +23,9 @@
                     x: function(d){return d._id;},
                     y: function(d){return d.headphones.length;},
                     showLabels: true,
+                    valueFormat: function(d){
+                        return d3.format(',')(d);
+                    },
                     duration: 500,
                     labelThreshold: 0.01,
                     labelSunbeamLayout: true,
@@ -52,7 +55,7 @@
                 },
                 showValues: true,
                 valueFormat: function(d){
-                    return d3.format(',.4f')(d);
+                    return d3.format(',')(d);
                 },
                 duration: 500,
                 xAxis: {
