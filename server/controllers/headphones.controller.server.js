@@ -10,11 +10,13 @@ module.exports.cartCheckout = (req, res) => {
 };
 
 module.exports.search = (req, res) => {
+    // Get params from request
     const name = req.body.name || '';
     const noiseCancelingLevels = req.body.levels || [];
     const types = req.body.types || [];
     let opts = {};
 
+    // Check if there is a need to include params in the query
     if (types.length !== 0) {
         opts.headphonesType = { $in: types };
     }
@@ -50,6 +52,7 @@ module.exports.getAllHeadphones = (req, res) => {
     });
 };
 
+// This method puts data in the db
 module.exports.fillData = (req, res) => {
     Headphones.find().then((results)=> {
         if (results.length == 0) {

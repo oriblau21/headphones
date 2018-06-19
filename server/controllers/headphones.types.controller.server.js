@@ -25,6 +25,7 @@ module.exports.addHeadphonesType = (req, res) => {
         });
 }
 
+// This method puts data in the db
 module.exports.fillData = (req, res) => {
     HeadphoneType.find().then((results) => {
         if (results.length == 0) {

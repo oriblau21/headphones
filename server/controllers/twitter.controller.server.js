@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const Twit = require('twit')
 let T;
 module.exports.init = () => {
+    // Sets the twitter object if the keys exist in the environment variables
     if (process.env.CONSUMER_KEY &&
         process.env.CONSUMER_SECRET &&
         process.env.ACCESS_TOKEN &&
@@ -19,9 +20,12 @@ module.exports.init = () => {
 
 module.exports.postTweet = (req, res) => {
     const status = req.body.text;
+
+    // Check if the twitter object exists the there is a text to post
     if (!T || !status || status === ''){
         res.status(500).end();
     } else {
+        // Posting the twit
         T.post('statuses/update', { status }, function(err, data, response) {
             if (err){
                 res.status(500).end();
