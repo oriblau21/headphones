@@ -1,3 +1,4 @@
+/* Global */
 @font-face {
     font-family: siteFont;
     src: url(fonts/Heebo-Regular.ttf);
@@ -8,12 +9,23 @@
 	font-size: 15px;
 }
 
+.mainView{
+	background-color: #ffffff;
+}
+
 .cart-btn{
     right: 10px;
     top: 10px;
 }
 
-/* Global */
+.footer {
+    bottom: 0;
+    left:0;
+    right: 0;
+	background-color: #f3eeee;
+	padding: 5px;
+}
+
 .no-margin{
 	margin:0;
 }
@@ -112,36 +124,6 @@ div.cover_img.small_cover{
 	visibility: visible;
 }
 
-/* Home Page */
-.cover_img{
-    background-size: cover;
-    background-image: url("Images/background.jpg");
-    height: 390px;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-position-x: inherit;
-}
-
-label.ShadowTitle{
-	text-shadow: 1px 1px 2px #000000;
-}
-
-.headphonesCategory {
-	font-weight: bold; 
-	text-decoration: underline;
-}
-
-.aboutContent {
-	column-count: 2;
-	-moz-column-count: 2;
-	-webkit-column-count: 2;
-}
-
-.about-container {
-	margin: 0 auto;
-	width: 1000px;
-}
-
 md-dialog {
 	overflow: hidden;
 }
@@ -166,23 +148,63 @@ a, a:hover, a:focus{
     display: block;
     text-align: center;
 }
-.headphonesWallpaper{
-    background: url(Images/_Loose.jpg);
-    background-repeat: round;
-    display: block;
-    height: 210px;
-    width: 100%;
+
+/* Home Page */
+.cover_img{
+    background-size: cover;
+    background-image: url("Images/background.jpg");
+    height: 390px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-position-x: inherit;
 }
 
-.headphones-filters{
-	width: 600px;
-	margin: 5px auto 30px auto;
+.headphonesCategory {
+	text-decoration: underline;
+    font-weight: 500;
+    text-shadow: 1px 1px rgba(0,0,0,0.87);
 }
 
-.headphones-filters md-input-container{
-	vertical-align: -webkit-baseline-middle;
-    padding-top: 10px;
+.aboutContent {
+	column-count: 2;
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
 }
+
+.homeTitle{
+	margin: 20px;
+	margin-left: 55px;
+}
+
+label.ShadowTitle{
+	text-shadow: 1px 1px 2px #000000;
+}
+
+.headphonesCategory {
+	font-weight: bold; 
+	text-decoration: underline;
+}
+
+.aboutContent {
+	column-count: 2;
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+}
+
+.about-container {
+	margin: 0 auto;
+	width: 1000px;
+}
+
+/* Headphone Item */
+
+.headphonesItem{
+	display: block;
+	padding-top: 15px;
+	padding-bottom: 8px;
+	align-content: center;
+}
+
 .headphonesImg{
     height: 300px;
     width: 300px;
@@ -197,13 +219,6 @@ h1.title{
     text-decoration: underline;
 }
 
-.headphonesItem{
-	display: block;
-	padding-top: 15px;
-	padding-bottom: 8px;
-	align-content: center;
-}
-
 .item{
 	display: block;
 	position: relative;
@@ -212,6 +227,7 @@ h1.title{
 	text-align: center;
 }
 
+/* Manager headphones */
 .headphones-item-wrapper {
 	margin-bottom: 30px;
 	opacity: 1;
@@ -233,7 +249,6 @@ h1.title{
 }
 
 .manage-headphones-actions-btn {
-	/* background-color: #ffffff !important; */
 	box-shadow: unset !important;
 	display: inline-block;
 	padding: 0;
@@ -241,78 +256,12 @@ h1.title{
 	margin: 0;	
 	border: 1px solid #000000;
 }
-
-.manage-headphones-actions-btn img {
-	display: inline-block;
-	margin-top: 5px;
-	height: 30px;
-	width: 30px;
-}
-
-
-
-.about-section{
-	max-width: 400px;
-}
-
-.about-section.right{
-	margin-left: 40px;
-}
-
-
-aside.filters{
-	border-right: 1px solid #e8e8e8;
-	padding-left: 25px;
-	padding-right: 25px;
-	padding-top: 15px;
-}
-
-.aside-filter-header {
-	margin: 20px 0 10px 0;
-}
-
-.checkbox-filters .checkbox {
-	margin: 5px 0;
-}
-.shoppingCart{
-	position: relative;
-	margin-right: 10px;
-}
-.qty{
-	width: 40px;
-	padding: 2px;
-	height: 24px;
-	font-size: 14px;
-	text-align: center;
-}
-.qtyWrap{
-	margin: 10px;
-	margin-bottom: 15px;
-}
-.successMsg{
-	display: none;
-}
-.homeTitle{
-	margin: 20px;
-	margin-left: 55px;
-}
-.mainView{
-	background-color: #ffffff;
-}
-.cartTitle{
-	margin-left: 10px;
-	margin-bottom: 20px;
-	text-decoration: underline;
-	font-weight: bold;
-	clear:both;
-}
-
-.searchResultErr{
-	font-weight: bold;
-	text-align: center;
-	background: #F0EFEE;
-	padding: 3px;
-}
+	.manage-headphones-actions-btn img {
+		display: inline-block;
+		margin-top: 5px;
+		height: 30px;
+		width: 30px;
+	}
 
 .add-headphones-btn {
 	background-color: #3C42EE !important;
@@ -321,6 +270,7 @@ aside.filters{
 	right: 5px;	
 	position: fixed;
 }
+
 
 .add-edit-headphones-dialog {
 	width: 300px;
@@ -363,82 +313,47 @@ aside.filters{
 	padding-right: 20px;
 }
 
-.storeItem {
-	text-align: center;
-	margin-bottom:30px;
+/* Headphones Display */
+aside.filters{
+	border-right: 1px solid #e8e8e8;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 15px;
 }
 
-.storeItemTitle {
-	text-decoration: underline; 
-	font-style: italic;
+.aside-filter-header {
+	margin: 20px 0 10px 0;
 }
 
-
-
-.storesCompTitle {
-	font-size: 24pt; 
-	text-decoration: underline;
-	text-align: center;
-}
-
-.mapMarkerContent {
-	margin-left: 10px;
-}
-
-.footer {
-    bottom: 0;
-    left:0;
-    right: 0;
-	background-color: #f3eeee;
-	padding: 5px;
-}
-
-.headphonesCategory {
-	text-decoration: underline;
-    font-weight: 500;
-    text-shadow: 1px 1px rgba(0,0,0,0.87);
-}
-
-.aboutTitle {
-	text-decoration: underline;
-	font-size: 24pt; 
+.searchResultErr{
 	font-weight: bold;
-	text-shadow: -3px 0px #e6e6e6;
+	text-align: center;
+	background: #F0EFEE;
+	padding: 3px;
 }
 
-.aboutContent {
-	column-count: 2;
-	-moz-column-count: 2;
-	-webkit-column-count: 2;
-}
-
-.image-uploader-wrapper {
-	overflow: hidden;
+/* Shopping cart */
+.shoppingCart{
 	position: relative;
+	margin-right: 10px;
 }
 
-.image-uploader-wrapper .image-uploader-text {
-	cursor: pointer;
-	font-size: 16px;
-	text-decoration: underline;
+.qty{
+	width: 40px;
+	padding: 2px;
+	height: 24px;
+	font-size: 14px;
+	text-align: center;
 }
 
-.image-uploader-wrapper input[type=file].image-uploader-button {
-	font-size: 100px;
-	position: absolute;
-	left: 0;
-	top: 0;
-	opacity: 0;
-  }
+.qtyWrap{
+	margin: 10px;
+	margin-bottom: 15px;
+}
 
-  .headphones-types-list {
-	  margin: 0 auto;
-	  width: 600px;
-  }
-
-  .headphones-types-list md-list {
-	  width: 310px;
-  }
+.successMsg{
+	display: none;
+}
 
   /* All Headphones */
   div.all_headphones_container{
@@ -467,7 +382,21 @@ aside.filters{
 	font-size:15px;
   }
 
-  /* Stores */
+/* Stores */
+.storeItem {
+	text-align: center;
+	margin-bottom:30px;
+}
+
+.storeItemTitle {
+	text-decoration: underline; 
+	font-style: italic;
+}
+
+.mapMarkerContent {
+	margin-left: 10px;
+}
+
   div.stores_search{
 	padding-top: 20px;
   }
