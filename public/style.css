@@ -329,12 +329,7 @@ aside.filters{
 	font-style: italic;
 }
 
-.gMap {
-	width:500px;
-	height:380px;
-	margin:auto;
-	border-radius: 10px;
-}
+
 
 .storesCompTitle {
 	font-size: 24pt; 
@@ -405,7 +400,7 @@ aside.filters{
   div.all_headphones_container{
 	padding-top: 20px;
   }
-  
+
   /* Headphone Item */
   img.headphone{
 	height: 160px;
@@ -427,3 +422,26 @@ aside.filters{
 	color: black;
 	font-size:15px;
   }
+
+  /* Stores */
+  div.stores_search{
+	padding-top: 20px;
+  }
+
+  div.store_container{
+	  padding-bottom:30px;
+  }
+
+  div.store_list{
+	  width:300px;
+  }
+
+  md-list.stores{
+	  height:380px;
+  }
+
+  .gMap {
+	width:500px;
+	height:380px;
+	border-radius: 10px;
+}

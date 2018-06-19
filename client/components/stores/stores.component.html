@@ -3,7 +3,7 @@
         <canvas id="titlecanvas" height="100" width="400"></canvas>
     </div>
 </div>
-<div style="position: relative;" layout="row" layout-align="center">
+<div class="stores_search" layout="row" layout-align="center">
     <md-input-container>
         <label>Name</label>
         <input type="text" name="name" ng-model="ctrl.storeName">
@@ -17,13 +17,18 @@
         <input type="text" name="phone" ng-model="ctrl.storePhone">
     </md-input-container>
     <md-input-container>
-        <input type="button" value="SEARCH" name="submit" ng-click="ctrl.search()">
+    <md-button class="md-raised md-primary" 
+                       name="submit" ng-click="ctrl.search()">Search</md-button>
     </md-input-container>
 </div>
-<br>
-<div class="items" layout="row" layout-wrap>
-    <Store ng-repeat="store in ctrl.stores" store="store"></Store>
+
+<div class="store_container" layout="row" layout-align="space-around center">
+    <div class="store_list">
+        <md-list class="stores md-dense" flex>
+            <md-list-item ng-repeat="store in ctrl.stores" class="md-3-line">
+                    <Store store="store"></Store>
+            </md-list-item>
+        </md-list>
+    </div>
+    <div id="googleMap" class="gMap"></div>
 </div>
-<br>
-<br>
-<div id="googleMap" class="gMap"></div>
