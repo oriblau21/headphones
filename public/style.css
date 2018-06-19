@@ -8,6 +8,12 @@
 	font-size: 15px;
 }
 
+.cart-btn{
+	position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
 /* Global */
 .no-margin{
 	margin:0;
@@ -21,7 +27,7 @@ div.divider{
 }
 .cartCounter{
 	position: absolute;
-	top: -2px;
+	top: -22px;
 	right: -12px;
 	font-size: 10px;
 	font-weight: bolder;
