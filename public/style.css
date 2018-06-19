@@ -8,6 +8,33 @@
 	font-size: 15px;
 }
 
+/* Global */
+.no-margin{
+	margin:0;
+}
+
+div.divider{
+	border-bottom: 1px solid #e8e8e8;
+	height:5px;
+	width:80%;
+	margin:auto;
+}
+.cartCounter{
+	position: absolute;
+	top: -2px;
+	right: -12px;
+	font-size: 10px;
+	font-weight: bolder;
+	border-radius: 100%;
+	background: #EF423C;
+	color: white;
+	height: 20px;
+	width: 20px;
+	line-height: 20px;
+	text-align: center;
+}
+
+/* Home Page */
 .cover_img{
     background-size: cover;
     background-image: url("Images/background.jpg");
@@ -25,6 +52,7 @@ div.foryou_title{
     margin-top: 261px;
     border-left: 60px solid #802849;
 }
+
 md-dialog {
 	overflow: hidden;
 }
@@ -39,11 +67,7 @@ md-dialog md-dialog-content:not([layout=row])>:first-child:not(.md-subheader) {
 a, a:hover, a:focus{
    text-decoration: none; 
 }
-.cart-btn{
-	position: fixed;
-	right: 5px;
-	top: 5px;
-}
+
 .siteLogo{
 	margin-top: 45px;
 	margin-left: 30px;
@@ -192,20 +216,6 @@ h1.title{
 	margin-left: 40px;
 }
 
-.cartCounter{
-	position: absolute;
-	top: -20px;
-	right: -12px;
-	font-size: 10px;
-	font-weight: bolder;
-	border-radius: 100%;
-	background: #EF423C;
-	color: white;
-	height: 20px;
-	width: 20px;
-	line-height: 20px;
-	text-align: center;
-}
 
 aside.filters{
 	border-right: 1px solid #e8e8e8;
@@ -254,22 +264,13 @@ aside.filters{
 	clear:both;
 }
 
-.cart-total {
-	margin-left: 10px;
-	margin-bottom: 20px;
-}
-
 .searchResultErr{
 	font-weight: bold;
 	text-align: center;
 	background: #F0EFEE;
 	padding: 3px;
 }
-.Checkout{
-	margin-left: 5px;
-	font-size: 16px;
-	font-weight: bold;
-}
+
 .add-headphones-btn {
 	background-color: #3C42EE !important;
 	bottom: 5px;
@@ -442,4 +443,10 @@ aside.filters{
 	width:500px;
 	height:380px;
 	border-radius: 10px;
+}
+
+/* Cart */
+md-button.Checkout{
+	font-size: 16px;
+	font-weight: bold;
 }
