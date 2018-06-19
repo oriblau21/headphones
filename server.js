@@ -6,9 +6,13 @@ const path = require('path');
 const socket = require('./server/socket.io.js');
 
 try {
+	// Connect to mongodb
 	mongoose.connect('mongodb://127.0.0.1:27017/headphonestore').then(() => {
+		// Use moddlewares
 		app.use(bodyParser.urlencoded({ extended: false }));
 		app.use(bodyParser.json());
+
+		// Set static paths of the app
 		app.use('/public', express.static('public'));
 		app.use('/node_modules', express.static('node_modules'));
 		app.use(express.static('client'));

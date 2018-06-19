@@ -34,10 +34,13 @@ function imageFilter(req, file, cb) {
 
 module.exports = (app) => {
     app.route('/').get((req, res) => {  
+        // Fill data in the db and initiate twitter object
         headphonesController.fillData();
         headphonesTypesController.fillData();
         storesController.fillData();
         twitterController.init();
+
+        // Serve index file
 		res.sendFile(path.resolve('server/views/index.html'));
 	});
 

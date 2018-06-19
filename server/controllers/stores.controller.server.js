@@ -19,11 +19,13 @@ module.exports.getAllStores = (req, res) => {
 };
 
 module.exports.search = (req, res) => {
+    // Get params from the request
     const name = req.body.name || '';
     const city = req.body.city || '';
     const phone = req.body.phone || '';
     let opts = {};
 
+    // Check if there is a need to include params in the query
     if (city !== '') {
         opts.city = { $regex: escapeRegExp(city.trim()), $options: 'i' };
     }
@@ -41,6 +43,7 @@ module.exports.search = (req, res) => {
     });
 };
 
+// This method puts data in the db
 module.exports.fillData = (req, res) => {
     Store.find().then((results) => {
         if (results.length == 0) {
