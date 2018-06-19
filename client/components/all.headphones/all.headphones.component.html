@@ -31,7 +31,7 @@
         </div>
     </aside>
     <div flex>        
-        <div class="items" layout="row" layout-wrap>
+        <div class="all_headphones_container" layout="row" layout-align="center" layout-wrap>
             <headphones-item flex="33" ng-repeat="headphones in ctrl.headphones" headphones="headphones" add-to-cart="ctrl.addToCart" show-price="ctrl.showPrice">
             </headphones-item>
             <h4 class="searchResultErr" ng-if="!ctrl.headphones.length">There are no matched items</h4>

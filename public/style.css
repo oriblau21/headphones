@@ -131,7 +131,6 @@ h1.title{
 	display: block;
 	padding-top: 15px;
 	padding-bottom: 8px;
-    /* height: 350px; */
 	align-content: center;
 }
 
@@ -211,7 +210,8 @@ h1.title{
 aside.filters{
 	border-right: 1px solid #e8e8e8;
 	padding-left: 25px;
-    padding-right: 25px;
+	padding-right: 25px;
+	padding-top: 15px;
 }
 
 .aside-filter-header {
@@ -399,4 +399,31 @@ aside.filters{
 
   .headphones-types-list md-list {
 	  width: 310px;
+  }
+
+  /* All Headphones */
+  div.all_headphones_container{
+	padding-top: 20px;
+  }
+  
+  /* Headphone Item */
+  img.headphone{
+	height: 160px;
+    width: 160px;
+    border: 1px solid #ececec;
+    border-radius: 14px;
+	padding: 15px;
+	align-self: center;
+  }
+
+  label.headphone_title{
+	color: #3f51b5;
+    font-size: 20px;
+    margin: 0;
+  }
+
+  label.headphone_price{
+	margin: 0;
+	color: black;
+	font-size:15px;
   }

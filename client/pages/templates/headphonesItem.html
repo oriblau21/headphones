@@ -1,11 +1,12 @@
 <div class="headphonesItem">
 	<div class="item">
-		<a ng-href="#!/headphones/{{headphones._id}}">
-			<img class="headphonesImg" ng-src="{{imageUrl}}"/> 
-			<h3> {{headphones.name}} </h3>
-			<h5 ng-show="{{showPrice}}"> {{headphones.price | currency}}</h5>
+		<a ng-href="#!/headphones/{{headphones._id}}" layout="column" layout-align="center">
+			<img class="headphone" ng-src="{{imageUrl}}"/> 
+			<label class="headphone_title"> {{headphones.name}} </label>
+			<label class="headphone_price" ng-show="{{showPrice}}"> {{headphones.price | currency}}</label>
 		</a>
 		<ng-transclude></ng-transclude>
+		<!-- <ng-md-icon icon="add_shopping_cart" style="fill: black" size="36"></ng-md-icon>  -->
 		<add-to-cart add-to-cart="addToCart" headphones="headphones"></add-to-cart>
 	</div>
 </div>
