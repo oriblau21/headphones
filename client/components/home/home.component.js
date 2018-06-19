@@ -32,14 +32,15 @@
 
             });
 
-            initCanvasTitle();            
+            initCanvasTitle("ForYouCanvas", "Just For You");   
+            initCanvasTitle("AboutCanvas", "About Us");           
         }
 
-        function initCanvasTitle() {
-            var c = document.getElementById("myCanvas");
+        function initCanvasTitle(id, title) {
+            var c = document.getElementById(id);
             var ctx = c.getContext("2d");
             ctx.font = "35px Comic Sans";
-            ctx.strokeText("Just For You", 10, 50);   
+            ctx.strokeText(title, 10, 50);   
         }
 
         function initData(data) {
