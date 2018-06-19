@@ -326,9 +326,10 @@ aside.filters{
 	width: 300px;
 }
 .add-edit-headphones-dialog .container {
-	margin-left: 20px;
 	overflow-x: hidden;
 }
+
+
 .add-edit-headphones-dialog .title-wrapper {
 	background-color: #3C42EE;
 	margin-bottom: 10px;
